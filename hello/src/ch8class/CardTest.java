@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 class MyFrame extends JFrame implements ActionListener {
+	// 기본 배치관리자 -> Frame, Dialog : Border | Panel, Applet : Flow
 	JPanel panel;
 	Cards cards;
 
@@ -35,7 +36,7 @@ class MyFrame extends JFrame implements ActionListener {
 		if (e.getActionCommand().equals("종료")) {
 			System.exit(0);
 		} else if (e.getActionCommand().equals("<<")) {
-			cards.layout.first(cards);
+			cards.layout.first(cards); // 아래에서 setLayout(new CardLayout()); 이렇게 하면 layout이 만들어지지 않기에 이벤트 없음
 		} else if (e.getActionCommand().equals("<")) {
 			cards.layout.previous(cards);
 		} else if (e.getActionCommand().equals(">")) {
@@ -49,7 +50,7 @@ class MyFrame extends JFrame implements ActionListener {
 		CardLayout layout;
 
 		public Cards() {
-			layout = new CardLayout();
+			layout = new CardLayout(); // 카드 레이아웃 설정
 			setLayout(layout);
 			for (int i = 0; i <= 10; i++) {
 				add(new JButton("현재 카드 번호는 " + i + "입니다"), "Center");
@@ -61,7 +62,7 @@ class MyFrame extends JFrame implements ActionListener {
 
 public class CardTest {
 	public static void main(String[] args) {
-		MyFrame f = new MyFrame();
+		Pizza f = new Pizza();
 	}
 
 }
