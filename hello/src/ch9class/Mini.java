@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Mini extends JFrame implements ActionListener {
+public class Mini extends JFrame implements ActionListener { // 누른거 또 누르면 변환 없어야하고 o, x 왔다갔다 하면서 되어야함
 
 	char turn = 'X';
 	JButton[][] buttons = new JButton[3][3];
