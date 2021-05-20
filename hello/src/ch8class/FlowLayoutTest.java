@@ -10,7 +10,7 @@ public class FlowLayoutTest extends JFrame {
 		setLocation(200, 300);
 		setTitle("MyFrame");
 		setLayout(new FlowLayout()); // FlowLayout(FlowLayout.LEFT, 10, 20); -> 왼쪽 정렬, 좌우간격 10, 상하간격 20
-		getContentPane().setBackground(Color.yellow);
+		getContentPane().setBackground(Color.yellow); // JFrame 클래스의 객체 매소드 : getContentPane()
 		JButton b1 = new JButton("확인");
 		JButton b2 = new JButton("취소");
 		add(b1);

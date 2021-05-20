@@ -6,16 +6,16 @@ import java.awt.*;
 public class Tempconverter extends JFrame {
 
 	public Tempconverter() {
-		JPanel panel = new JPanel();	// (1)
+		JPanel panel = new JPanel();
 		add(panel);
 
-		JLabel label1 = new JLabel("화씨 온도");	// (2)
+		JLabel label1 = new JLabel("화씨 온도");
 		JLabel label2 = new JLabel("섭씨 온도");
 		JTextField field1 = new JTextField(15);
 		JTextField field2 = new JTextField(15);
 		JButton button = new JButton("변환");
 
-		panel.add(label1); // 순서 중요
+		panel.add(label1); // 순서 중요!
 		panel.add(field1);
 
 		panel.add(label2);

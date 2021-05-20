@@ -14,8 +14,8 @@ public class Mini extends JFrame {
 		setLocation(310, 200);
 
 		JPanel panel = new JPanel();
-		panel.setLayout(new BoxLayout(panel, 1));
-		JPanel panelA = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); // textField와 버튼이 들어가는 panel은 BoxLayout을 가지고 있다, y축으로 쌓음
+		JPanel panelA = new JPanel(); // 버튼을 넣을 패널
 
 		JTextField text = new JTextField(55);
 
@@ -25,7 +25,7 @@ public class Mini extends JFrame {
 			button[i] = new JButton(labels[i]);
 			button[i].setBackground(Color.yellow);
 			if (i == 3 || i == 4 || i == 8 || i == 9 || i == 13 || i == 14 || i == 18 || i == 19 || i == 23 || i == 24) {
-				button[i].setForeground(Color.red);
+				button[i].setForeground(Color.red); //글자색 바꿈
 			}
 		}
 		for (int i = 0; i < 25; i++) {

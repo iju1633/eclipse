@@ -8,7 +8,7 @@ public class BorderLayoutTest extends JFrame {
 	public BorderLayoutTest() {
 		setTitle("BorderLayoutTest");
 		setSize(300, 200);
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout()); // frame의 기본 관리자는 이미 BorderLayout
 
 		JButton b1 = new JButton("NORTH");
 		JButton b2 = new JButton("SOUTH");
