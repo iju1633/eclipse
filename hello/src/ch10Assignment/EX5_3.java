@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class EX5_3 extends JFrame implements ItemListener, ActionListener { // 패널들 간의 간격이나 라디오 버튼끼리의 간격도 중요한 지(사진 첨부)
-	// 라디오버튼과 버튼 둘다 frame에서 이벤트 처리할 예정
+public class EX5_3 extends JFrame implements ItemListener, ActionListener { // 라디오버튼과 버튼 둘다 frame에서 이벤트 처리할 예정
+	
 	JRadioButton rb1, rb2, rb3, rb4, rb5, rb6, rb7, rb8, rb9, rb10;
 	JTextField tf;
 	JButton b1, b2;

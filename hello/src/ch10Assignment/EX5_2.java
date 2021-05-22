@@ -4,17 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class EX5_2 extends JFrame implements ActionListener { // 한 자리수 계산마다 C 눌러주고 연산하는 게 맞는지(연산 후 결과창에서 숫자누르면 새로 연산 시작하게끔 해야하는 지 궁금해서)
-	// 조건과 같이 3개의 패널을 통해 구현할 예정
+public class EX5_2 extends JFrame implements ActionListener { // 조건과 같이 3개의 패널(above, middle, bottom)을 통해 구현할 예정
+
 	JButton[] buttons;
 	JTextField text;
 	JButton clear;
 	int oldNum, temp; // 연산의 첫 번째 인수와 두 번째 인수를 저장할 변수
-	double result = 0.0; // 나눗셈은 실수가 될 수도 있기에 double형 선택
+	double result = 0.0; // 나눗셈은 결과가 실수가 될 수도 있기에 double형으로 설정
 	String func = ""; // 연산자가 저장될 변수
 
 	public EX5_2() {
-		setSize(300, 210);
+		setSize(285, 205);
 		setTitle("계산기");
 
 		JPanel above = new JPanel(); // 텍스트 필드를 담을 panel
@@ -24,6 +24,7 @@ public class EX5_2 extends JFrame implements ActionListener { // 한 자리수 �
 		add(above, BorderLayout.NORTH);
 
 		JPanel middle = new JPanel(); // C 버튼을 담을 panel
+		middle.setLayout(new BorderLayout());
 		clear = new JButton("C       ");
 		clear.addActionListener(this);
 		middle.add(clear);
@@ -35,7 +36,7 @@ public class EX5_2 extends JFrame implements ActionListener { // 한 자리수 �
 
 		// 버튼의 내용물(그림과 같이 버튼의 왼쪽 정렬을 위해 일부러 공간을 만듦
 		String[] b = { "7       ", "8       ", "9       ", "/       ", "4       ", "5       ", "6       ", "*       ",
-				"1       ", "2       ", "3       ", "-       ", "0       ", "+/-      ", "=       ", "+       " };
+				"1       ", "2       ", "3       ", "-       ", "0       ", "+/-     ", "=       ", "+       " };
 
 		for (int i = 0; i < 16; i++) {
 			buttons[i] = new JButton(b[i]); // 버튼 생성
@@ -87,18 +88,21 @@ public class EX5_2 extends JFrame implements ActionListener { // 한 자리수 �
 		} else if (e.getSource() == buttons[3]) { // 연산자
 			func = "/";
 			temp = oldNum; // 첫 번째 인수와 두 번째 인수가 다를 수 있기에 다음과 같이 설정
-			text.setText(temp + func);
+			text.setText(text.getText() + func);
 		} else if (e.getSource() == buttons[7]) {
 			func = "*";
 			temp = oldNum;
-			text.setText(temp + func);
+			text.setText(text.getText() + func);
 		} else if (e.getSource() == buttons[11]) {
 			func = "-";
 			temp = oldNum;
-			text.setText(temp + func);
-		} else if (e.getSource() == buttons[13]) { // +/- 버튼은 사용않음
-		} else if (e.getSource() == buttons[14]) { // =버튼을 눌렀을 때의 경우
-
+			text.setText(text.getText() + func);
+		} else if (e.getSource() == buttons[15]) {
+			func = "+";
+			temp = oldNum;
+			text.setText(text.getText() + func);
+		} else if (e.getSource() == buttons[13]) { // +/- 버튼은 사용 않음
+		} else if (e.getSource() == buttons[14]) { // = 버튼을 눌렀을 때의 경우
 			if (func.equals("/")) { // 연산자에 따라 결과값이 바뀜
 				result = temp * 1.0 / oldNum;
 				text.setText(temp + func + oldNum + "=" + result);
@@ -112,11 +116,7 @@ public class EX5_2 extends JFrame implements ActionListener { // 한 자리수 �
 				result = temp + oldNum;
 				text.setText(temp + func + oldNum + "=" + (int) result);
 			}
-		} else if (e.getSource() == buttons[15]) {
-			func = "+";
-			text.setText(temp + func);
 		}
-
 	}
 
 	public static void main(String[] args) {
