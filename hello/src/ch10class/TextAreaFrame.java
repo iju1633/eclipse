@@ -18,7 +18,10 @@ public class TextAreaFrame extends JFrame implements ActionListener {
 		textArea.setEditable(false);
 		
 		add(textField, BorderLayout.NORTH);
-		add(textArea, BorderLayout.CENTER);
+		
+		// add(textArea, BorderLayout.CENTER); 스크롤바 만들면 textArea를 더 이상 add할 필요 없음
+		JScrollPane scrollPane = new JScrollPane(textArea);
+		add(scrollPane, BorderLayout.CENTER);
 
 		pack();
 		setVisible(true);
