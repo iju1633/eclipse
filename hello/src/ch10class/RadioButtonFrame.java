@@ -16,7 +16,7 @@ public class RadioButtonFrame extends JFrame implements ActionListener {
 
 		top = new JPanel();
 		top.add(new JLabel("어떤 크기의 커피를 주문하시겠습니까?")); // 빈칸 출제 가능(위에 따로 JLabel 선언 필요없음)
-		add(top, BorderLayout.NORTH); // panel은 기본적으로 BorderLayout
+		add(top, BorderLayout.NORTH); // frame은 기본적으로 BorderLayout
 
 		size = new JPanel();
 		small = new JRadioButton("small size");
