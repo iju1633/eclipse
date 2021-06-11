@@ -44,7 +44,7 @@ public class FoxImageTest extends JFrame { // 이벤트는 람다식이라 imple
 	class MyPanel extends JPanel {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			g.drawImage(img, x, y, this); // JPanel은 이미지가 다 로딩되면 ImageObserverㄹ 부터 로딩되는 순간을 포착하여 이미지를 도화지에 그리도록 명령하게 된다
+			g.drawImage(img, x, y, this); // JPanel은 이미지가 다 로딩되면 ImageObserver로부터 로딩되는 순간을 포착하여 이미지를 도화지에 그리도록 명령하게 된다
 			// 그래서 일반적으로 drawImage 메소드의 네번째 매개변수로 this를 사용하는게 일반적이다.
 		}
 	}

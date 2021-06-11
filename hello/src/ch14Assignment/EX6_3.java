@@ -9,7 +9,7 @@ class RandomList<T> {
 		list = new ArrayList<>(i);
 	}
 
-	public void add(T item) { // String 이던 int이던 저장 가능, 제네릭
+	public void add(T item) { // 제네릭 프로그래밍
 		list.add(item);
 	}
 
