@@ -6,15 +6,15 @@ import java.awt.event.*;
 
 public class ComboBoxFrame extends JFrame implements ActionListener { // frame에서 이벤트 처리할 거라는 것을 알 수 있음
 
-	JLabel label;
+	JLabel label; // label에다가 사진을 넣을 것이기 때문에 밖에 설정해줌
 
 	public ComboBoxFrame() {
 		setTitle("콤보 박스");
 		setSize(400, 200);
 
-		String[] venoms = { "venom1", "venom2", "venom", "venom4", "background1" };
-		JComboBox venomList = new JComboBox(venoms); // 배열은 인수로 넣거나, 비어있게 선언후 venomList.addItem("venom1");과 같이 선언 가능
-		venomList.setSelectedIndex(0); // 기본으로 선택되어있는 건 첫번 째 것
+		String[] venoms = { "venom1", "venom2", "venom", "venom4", "background1" }; // 사진 파일의 이름을 넣어줌
+		JComboBox venomList = new JComboBox(venoms); // 배열은 인수로 넣거나, 비어있게 선언후 venomList.addItem("venom1");과 같이 선언 가능!!!
+		venomList.setSelectedIndex(0); // 기본으로 선택되어있는 건 첫 번째 것
 		venomList.addActionListener(this); // 콤보 박스 변경마다 이벤트 등록
 
 		label = new JLabel();

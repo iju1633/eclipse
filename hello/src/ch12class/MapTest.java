@@ -12,7 +12,7 @@ class Student {
 	}
 
 	public String toString() {
-		return name; // print할 때 new Student(100, "홍길동")이렇게 해도 홍길동만 출력된다는 의미
+		return name; // print할 때 new Student(100, "홍길동")이렇게 해도 홍길동만 출력된다는 의미, 예시처럼 출력되게 빈칸 출제 가능!!!
 	}
 }
 
@@ -24,7 +24,7 @@ public class MapTest {
 		st.put("200", new Student(200, "김유신"));
 		st.put("300", new Student(300, "김철수"));
 
-		System.out.println(st); // 전체 출력 방법 : {100=홍길동, 200=김유신, 300=김철수} 원래 이런 형식
+		System.out.println(st); // 전체 출력 방법 : {100=홍길동, 200=김유신, 300=김철수}, set은 []였음
 
 		st.remove("200"); // 김유신 행 삭제
 
@@ -42,12 +42,12 @@ public class MapTest {
 		System.out.println();
 		for (String key : st.keySet()) { // key들의 집합을 돌면서 get을 통해 value를 반환
 			Student s = st.get(key);
-			System.out.println("key=" + key + ", value=" + s);
+			System.out.println("key=" + key + ", value=" + s); // s : value=최자영 이렇게 나옴, 왜냐하면 위에서 toString(); 재정의 했기 때문
 		}
 
 		// 람다식 활용
 		System.out.println();
-		st.forEach((key, value) -> {
+		st.forEach((key, value) -> { // 꼭 알아둘 것!! st.ForEach((key, value) -> {
 			System.out.println("key=" + key + ", value=" + value);
 		});
 	}

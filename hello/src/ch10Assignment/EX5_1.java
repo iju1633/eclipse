@@ -16,12 +16,12 @@ public class EX5_1 extends JFrame implements ActionListener { // 누른거 또 �
 		setTitle("Tic Tac Toe");
 
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(0, 3, 3, 3));
+		panel.setLayout(new GridLayout(0, 3, 3, 3)); // Panel의 기본 배치 관리자 : FlowLayout
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				buttons[i][j] = new JButton(" "); // 아래의 equals안의 " "와 new JButton("")의 내용물 동일해야 이벤트 처리됨
 				panel.add(buttons[i][j]);
-				buttons[i][j].addActionListener(this);
+				buttons[i][j].addActionListener(this); // 버튼마다 이벤트 등록
 			}
 		}
 		add(panel);
@@ -32,7 +32,7 @@ public class EX5_1 extends JFrame implements ActionListener { // 누른거 또 �
 	public void actionPerformed(ActionEvent e) { // frame에서 이벤트 처리
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				if (e.getSource() == buttons[i][j] && buttons[i][j].getText().equals(" ") == true) {
+				if ((JButton) e.getSource() == buttons[i][j] && buttons[i][j].getText().equals(" ") == true) {
 					if (turn == 'X') {
 						buttons[i][j].setText("X");
 						turn = 'O';

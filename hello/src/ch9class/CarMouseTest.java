@@ -12,7 +12,7 @@ public class CarMouseTest extends JFrame {
 	public CarMouseTest() {
 		setSize(600,300);
 		JButton button = new JButton("");
-		ImageIcon icon = new ImageIcon("C:\\Users\\임재욱\\Desktop\\잡동사니\\배경화면\\venom1.jpg");
+		ImageIcon icon = new ImageIcon("C:\\Users\\임재욱\\Desktop\\잡동사니\\배경화면\\fox.png");
 		button.setIcon(icon);
 		JPanel panel = new JPanel();
 		panel.add(button);

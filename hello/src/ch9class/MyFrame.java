@@ -20,7 +20,7 @@ public class MyFrame extends JFrame { // MyListener 클래스 만들어서 이�
 	public MyFrame() {
 		setSize(400, 150);
 		setTitle("이벤트 예제");
-		setLayout(new FlowLayout()); // panel이 아니라 그냥 frame에다가 넣는 것이므로 기본 배치는 flow이다
+		setLayout(new FlowLayout()); // panel이 아니라 그냥 frame에다가 넣는 것이므로 기본 배치는 Border이다
 
 		button = new JButton("증가");
 		label = new JLabel("현재의 카운터값: " + counter);

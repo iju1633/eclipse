@@ -20,7 +20,7 @@ class MyPanel extends JPanel { // 이전 실습들은 이벤트 처리도 해야
 	public void paintComponent(Graphics g) { // 위치는 JPanel을 extends한 class안!
 		super.paintComponent(g);
 		double total = 0.0D; // double 값을 의미한다는 뜻
-		for (Slice s : list) { // total 구하고
+		for (Slice s : list) { // total 구하는 과정
 			total += s.value;
 		}
 		double currValue = 0.0;
@@ -29,9 +29,9 @@ class MyPanel extends JPanel { // 이전 실습들은 이벤트 처리도 해야
 			start = (int) (currValue * 360 / total); // 시작점과 각도 모두 360까지 존재!
 			int angle = (int) (s.value * 360 / total);
 
-			g.setColor(s.color); // 설정한 색깔에 맞게
+			g.setColor(s.color); // 설정한 색깔에 맞게!!!
 			g.fillArc(100, 50, 200, 200, start, angle); // 칠해줌
-			currValue += s.value; // 시작점을 바꿔주어야하므로 필수적인 코드!
+			currValue += s.value; // 시작점을 바꿔주어야하므로 필수적인 코드!!!
 		}
 	}
 }

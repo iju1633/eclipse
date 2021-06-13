@@ -26,7 +26,7 @@ class MyFrame extends JFrame implements ActionListener {
 		setVisible(true);
 	}
 
-	void addButton(String str, Container target) { // 손코딩 or 빈칸 확률 높음
+	public void addButton(String str, Container target) { // 손코딩 or 빈칸 확률 높음
 		JButton button = new JButton(str);
 		button.addActionListener(this);
 		target.add(button);
@@ -53,7 +53,7 @@ class MyFrame extends JFrame implements ActionListener {
 			layout = new CardLayout(); // 카드 레이아웃 설정, 빈칸 가능!!
 			setLayout(layout);
 			for (int i = 0; i <= 10; i++) {
-				add(new JButton("현재 카드 번호는 " + i + "입니다"), "Center");
+				add(new JButton("현재 카드 번호는 " + i + "입니다"), "center"); // "center" == BorderLayout.CENTER
 			}
 		}
 	}

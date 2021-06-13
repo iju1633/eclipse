@@ -16,9 +16,10 @@ public class FoxImageTest extends JFrame { // 이벤트는 람다식이라 imple
 	public FoxImageTest() {
 		ImageIcon icon = new ImageIcon("C:\\Users\\임재욱\\Desktop\\잡동사니\\배경화면\\Fox.png");
 		img = icon.getImage(); // 중요
+		// img.setBounds(x,y,100,100); 안되는 이유, VenomGame에서와 같이 label, 즉 컴포넌트가 아니기도 하고 setLayout(null)을 할 수 없는 상태(이미 BorderLayout 사용 중)
 
 		setSize(500, 200);
-		add(new MyPanel(), BorderLayout.CENTER);
+		add(new MyPanel(), BorderLayout.CENTER); // frame은 기본으로 BorderLayout
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 교수는 안씀
 
@@ -30,6 +31,7 @@ public class FoxImageTest extends JFrame { // 이벤트는 람다식이라 imple
 			x -= 10;
 			repaint();
 		});
+		
 		b2.addActionListener(e -> {
 			x += 10;
 			repaint();
@@ -38,7 +40,7 @@ public class FoxImageTest extends JFrame { // 이벤트는 람다식이라 imple
 		panel.add(b1);
 		panel.add(b2);
 
-		add(panel, BorderLayout.SOUTH);
+		add(panel, BorderLayout.SOUTH); // 버튼이 있는 패널을 남쪽으로, 사진이 있는 패널은 중앙으로)
 	}
 
 	class MyPanel extends JPanel {

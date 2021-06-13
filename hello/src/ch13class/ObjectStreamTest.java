@@ -5,12 +5,10 @@ import java.util.*;
 
 public class ObjectStreamTest {
 
-	public static void main(String[] args) throws IOException { // throws IOException 위치 중요! public class 옆 아니다!
-		ObjectInputStream in = null;
+	public static void main(String[] args) throws IOException { // throws IOException 위치 중요! public class 옆 아니다!!!
+		ObjectInputStream in = null; // 아래 finally 때문에 밖에 선언한 것임!!
 		ObjectOutputStream out = null;
 		try {
-			int c;
-
 			out = new ObjectOutputStream(new FileOutputStream("object.dat"));
 			Date dd = new Date();
 			System.out.println(dd);
@@ -20,8 +18,10 @@ public class ObjectStreamTest {
 			Thread.sleep(2000); // 2초 쉬고
 
 			in = new ObjectInputStream(new FileInputStream("object.dat"));
-			Date d = (Date) in.readObject(); // write했던 거 읽어오는데 객체를 읽어오는 것이니까 형변환 필요
-			System.out.println(new Date()); // 2초 지난 시간 출력
+			Date d = (Date) in.readObject(); // write했던 거 읽어오는데 객체를 읽어오는 것이니까 형변환 필요, 빈칸 가능!!
+			
+			System.out.println(new Date()); // 2초 지난 시간 출력, 몇 위 아래와 몇 초 차이나는 지 적으라는 문제 가능!! 즉, 흐름을 이해할 줄 알아야 함.
+			
 			System.out.println(d); // write했던 거 출력 즉, 2초 전 시간 출력
 		} catch (ClassNotFoundException e) { // 객체를 읽고 쓰는 것이므로 이러한 오류 가능
 		} catch (InterruptedException e) { // Thread.sleep 썼으니까 이러한 오류 가능

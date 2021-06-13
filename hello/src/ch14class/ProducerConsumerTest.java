@@ -1,10 +1,10 @@
 package ch14class;
 
-import java.util.Random;
+import java.util.Random; // 시험 나올만한 문제
 
 class Buffer {
 	private int data;
-	private boolean empty = true;
+	private boolean empty = false;
 
 	public synchronized int get() { // data를 공유함, ex 생성하면 소비하고, 기다렸다가 생성되면 소비하고 이런 구조임
 		while (empty) { // 비어있으면 계속 기다림
@@ -14,7 +14,7 @@ class Buffer {
 			}
 		}
 		empty = true; // 비어있지 않다면 소비할 거니까 빈 걸로 다시 만들어야 함
-		notifyAll(); // 대기 상태에 있는 쓰레드를 깨운다. notify()라는 함수는 하나의 쓰레드를 깨우는 것인데 대기 상태에 들어간 순서대로 깨우는것이 아니니 사용시 주의
+		notifyAll(); // 대기 상태에 있는 쓰레드를 깨운다. notify()라는 함수는 하나의 쓰레드를 깨우는 것인데 대기 상태에 들어간 순서대로 깨우는것이 아니니 사용시 주의 , 빈칸 문제 너무 가능!!
 		return data;
 	}
 
@@ -34,7 +34,7 @@ class Buffer {
 class Producer implements Runnable {
 	private Buffer buffer;
 
-	public Producer(Buffer buffer) {
+	public Producer(Buffer buffer) { // 이어지게 만드는 핵심!!
 		this.buffer = buffer;
 	}
 
@@ -59,7 +59,7 @@ class Consumer implements Runnable {
 
 	public void run() {
 		for (int i = 0; i < 10; i++) {
-			buffer.get(); // 이거 없으면 0번 생산한 후에 계속 소비만 계속하네, get을 해줘야지 empty가 true가 되어서 생산을 하는데, get을 안하면 비어있지 않으니까 생산이 안돼서 소비만 계속 하는 것임
+			buffer.get(); // 이거 없으면 0번 생산한 후에 계속 소비만 계속하네, get을 해줘야지 empty가 true가 되어서 생산을 하는데, get을 안하면 비어있지 않으니까 생산이 안돼서 소비만 계속 하는 것임, 빈칸 가능
 			System.out.println("소비자: " + i + "번 케잌을 소비하였습니다.");
 			try {
 				Thread.sleep((int) Math.random() * 100);

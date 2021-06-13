@@ -17,7 +17,7 @@ public class FileTest { // 여때까지 파일을 읽고 쓰기만 했다면 이
 			System.out.println("경로: " + f.getPath());
 			System.out.println("부모: " + f.getParent());
 			System.out.println("절대경로: " + f.getAbsolutePath());
-			System.out.println("정규경로: " + f.getCanonicalPath()); // 중요
+			System.out.println("정규경로: " + f.getCanonicalPath()); // 중요 getCanonicalPath();, getAbsolutePath();
 			System.out.println("디렉토리 여부: " + f.isDirectory());
 			System.out.println("파일 여부: " + f.isFile());
 			System.out.println("========================");

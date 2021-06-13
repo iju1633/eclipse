@@ -13,7 +13,7 @@ public class VenomGame extends JFrame {
 			this.y = y;
 			label = new JLabel();
 			label.setIcon(new ImageIcon(fname)); // 어색함
-			label.setBounds(x, y, 100, 100); // 확실히 알자
+			// label.setBounds(x, y, 100, 100); // 확실히 알자, 뭐지..run()에만 넣으면 되네. 실행해야하니까.
 			add(label);
 		}
 

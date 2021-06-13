@@ -21,7 +21,7 @@ public class TextFieldFrame extends JFrame { // 차근차근 뭐가 필요한 �
 		
 		panel.add(new JLabel("제곱한 값: "));
 		result = new JTextField(15);
-		result.setEditable(false);
+		result.setEditable(false); // 빈칸 가능!!
 		panel.add(result);
 		
 		button = new JButton("OK");
@@ -37,9 +37,9 @@ public class TextFieldFrame extends JFrame { // 차근차근 뭐가 필요한 �
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == button || e.getSource() == text) { // 버튼 누르거나 엔터 누를 경우
 				String input = text.getText();
-				int output = Integer.parseInt(input);
-				result.setText(" " + output * output);
-				text.requestFocus(); // 생각 못했던 부분
+				int output = Integer.parseInt(input); // 숫자로 바꿔야 제곱을 할 수 있다.
+				result.setText("" + output * output); // String으로 만들어주기 위해 일부러 "" 더함!!
+				text.requestFocus(); // 생각 못했던 부분, 바로 다음 숫자 입력할 수 있도록 하기 위함
 			}
 		}
 	}

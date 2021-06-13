@@ -17,7 +17,7 @@ class MyPanel1 extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setFont(f1);
-		g.drawString("Serif 20 points PLAIN", 10, 50);
+		g.drawString("Serif 20 points PLAIN", 10, 50); // 좌측 하단이 기준!!
 		g.setFont(f2);
 		g.drawString("SanSerif 20 points BOLD", 10, 70);
 		g.setFont(f3);
@@ -33,7 +33,7 @@ public class FontTest extends JFrame {
 	public FontTest() { // 교재에서는 여기서 font객체 생성함
 		setSize(500, 200);
 		setTitle("Font Test");
-		JPanel panel = new MyPanel1(); // 교수님이 사용한 방법 add(new MyPanel1());대신
+		JPanel panel = new MyPanel1(); // 교수님이 사용한 방법 add(new MyPanel1());대신, 형식 JPanel : MyPanel1
 		add(panel);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

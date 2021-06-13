@@ -14,6 +14,6 @@ public class CopyFile1 {
 			while ((ch = fr.read()) != -1) {
 				fw.write(ch); // 화면에 표시할 필요 없으니 char형변환 필요 없음!
 			}
-		} // catch를 안쓰기도 함 -> 따라서 읽어올 파일이 없으면 오류남
+		} // catch를 안쓰기도 함 -> 따라서 읽어올 파일이 없으면 오류남!!
 	}
 }

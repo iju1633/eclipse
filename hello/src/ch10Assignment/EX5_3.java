@@ -116,7 +116,7 @@ public class EX5_3 extends JFrame implements ItemListener, ActionListener { // �
 	}
 
 	public void itemStateChanged(ItemEvent e) { // 라디오버튼 이벤트 처리
-		if (rb1.isSelected()) { // 모두 else if로 연결하면 하나만 처리하고 if문이 종결되기에 종류, 추가토핑, 크기별로 if문 설정해야함 
+		if (rb1.isSelected()) { // 모두 else if로 연결하면 하나만 처리하고 if문이 종결되기에 종류, 추가토핑, 크기별로 if문 설정해야함 !!!
 			flavor = 10000;
 		} else if (rb2.isSelected()) { // 라디오버튼은 isSelected() 메서드 사용
 			flavor = 11000;
@@ -150,7 +150,7 @@ public class EX5_3 extends JFrame implements ItemListener, ActionListener { // �
 			flavor = 0;
 			topping = 0;
 			size = 0;
-			tf.setText(flavor + topping + size + "원");
+			tf.setText("0원");
 		}
 	}
 

@@ -24,7 +24,7 @@ public class CountDownTest extends JFrame { // extends JFrame 놓치지 말자!
 		setSize(400, 150);
 
 		label = new JLabel("Start");
-		label.setFont(new Font("Serif", Font.BOLD, 100)); // 확실히 알 것
+		label.setFont(new Font("a", Font.BOLD, 100)); // 확실히 알 것
 		add(label);
 
 		setVisible(true);

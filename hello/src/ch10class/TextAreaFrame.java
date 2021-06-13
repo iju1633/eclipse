@@ -15,7 +15,7 @@ public class TextAreaFrame extends JFrame implements ActionListener {
 		textField.addActionListener(this);
 
 		textArea = new JTextArea(10, 30);
-		textArea.setEditable(false);
+		textArea.setEditable(false); // 빈칸 가능
 		
 		add(textField, BorderLayout.NORTH);
 		

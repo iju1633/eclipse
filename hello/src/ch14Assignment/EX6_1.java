@@ -44,7 +44,7 @@ public class EX6_1 extends JFrame {
 
 		public void paintComponent(Graphics g) { // 주사위 눈은 예시와 최대한 비슷하게 fillRoundRect으로 구현
 
-			switch (d1.value) { // 첫 번째 주사위에 대한 그래픽 구현, 주사위 눈 마다 알맞은 그래픽이 그려져야 함
+			switch (d1.getValue()) { // 첫 번째 주사위에 대한 그래픽 구현, 주사위 눈 마다 알맞은 그래픽이 그려져야 함
 			case 1:
 
 				g.drawRect(d1.getX(), d1.getY(), 50, 50);
@@ -110,7 +110,7 @@ public class EX6_1 extends JFrame {
 				break;
 			}
 
-			switch (d2.value) { // 두 번째 주사위에 대한 그래픽 구현, 주사위 눈 마다 알맞은 그래픽이 그려져야 함
+			switch (d2.getValue()) { // 두 번째 주사위에 대한 그래픽 구현, 주사위 눈 마다 알맞은 그래픽이 그려져야 함
 			case 1:
 				g.drawRect(d2.getX(), d2.getY(), 50, 50);
 				g.setColor(Color.white);

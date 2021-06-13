@@ -20,7 +20,7 @@ class MyThread extends Thread {
 	Counter sharedCounter;
 	String name;
 
-	public MyThread(String str, Counter c) {
+	public MyThread(String str, Counter c) { // 이부분이 핵심!!!
 		name = str;
 		this.sharedCounter = c;
 	}

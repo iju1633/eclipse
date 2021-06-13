@@ -15,18 +15,20 @@ class Monster2 {
 		this.x = x;
 		this.y = y;
 		this.hp = hp;
-		ImageIcon icon = new ImageIcon("C:\\Users\\임재욱\\Desktop\\잡동사니\\배경화면\\Fox.png"); // 이 과정 확실히 알 것
+		ImageIcon icon = new ImageIcon("C:\\Users\\임재욱\\Desktop\\잡동사니\\배경화면\\Fox.png"); // 이 과정 확실히 알 것!!
 		image = icon.getImage();
 	}
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g) { // 다시 그릴 건데 선택되지 않은 것만 다시 repaint한다는 마인드, draw()메소드의 위치 생소하니 기억할 것
 		if (isSelected == 0) {
-			g.drawImage(image, x, y, W, H, null); // null은 imageObserver에 해당
+			g.drawImage(image, x, y, W, H, null); // null은 imageObserver에 해당, null 자리가 ImageObserver인데 this를 하게되면
+													// Monster2를 가리키는 것이고 Monster2는 그림을 그릴 수 있는 컴포넌트가 아닌 객체 class이므로 대체로
+													// this 적지만 이번에는 null해야함.
 		}
 	}
 
 	public void selected(int x, int y) {
-		if ((this.x < x && this.x + W > x) && (this.y < y && this.y + H > y)) {
+		if ((this.x < x && this.x + W > x) && (this.y < y && this.y + H > y)) { // if 이미지 크기 안을 클릭한다면 then selected.
 			isSelected = 1;
 		}
 	}
@@ -34,7 +36,7 @@ class Monster2 {
 
 public class Mini extends JPanel {
 	int x, y;
-	ArrayList<Monster2> monsters = new ArrayList<Monster2>();
+	ArrayList<Monster2> monsters = new ArrayList<Monster2>(); // 객체를 배열에 저장
 
 	public Mini() {
 		for (int i = 0; i < 10; i++) {
@@ -51,11 +53,11 @@ public class Mini extends JPanel {
 		});
 	}
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) { // paintComponent 철자 조심하라했으니 요 메서드 전체 쓰는 거 가능!!!
 		super.paintComponent(g);
 
 		for (int i = 0; i < monsters.size(); i++) {
-			Monster2 m = monsters.get(i);
+			Monster2 m = monsters.get(i); // 배열안에 있는 객체를 하나 가져오는 것 의미
 			m.selected(x, y);
 			m.draw(g);
 		}

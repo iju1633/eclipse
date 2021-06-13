@@ -19,7 +19,7 @@ class KeyFrame extends JFrame implements KeyListener {
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
+	public void keyTyped(KeyEvent e) { // shift, alt, ctl 은 textField에 적히질 않기 때문에 keyTyped에는 해당이 안됨
 		display(e, "KeyTyped");
 	}
 
@@ -29,7 +29,7 @@ class KeyFrame extends JFrame implements KeyListener {
 	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {
+	public void keyReleased(KeyEvent e) { // 떨어졌을 때 display해봤자 그때는 아무것도 눌리지 않은 상태이기에 당연히 다 false임
 		display(e, "KeyReleased");
 	}
 

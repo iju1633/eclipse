@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class BouncingBall extends JFrame implements ActionListener {
 
 	int x, y;
-	private int xSpeed = 3, ySpeed = 3; // 세밀하게 움직이느냐 크게 움직이느냐 차이
+	private int xSpeed = 3, ySpeed = 3; // 조금씩 움직이느냐 크게 움직이느냐 차이
 	private static final int WIDTH = 600;
 	private static final int HEIGHT = 200;
 	private static final int PERIOD = 10; // 천천히 움직이느냐 빨리 움직이느냐
@@ -24,7 +24,7 @@ public class BouncingBall extends JFrame implements ActionListener {
 		x += xSpeed; // 빈칸으로 내기 좋음
 		y += ySpeed;
 		if (x > WIDTH - 40 || x < 0) { // 오른쪽 벽 || 왼쪽 벽
-			xSpeed = -xSpeed; // 튕겨나가도록 부호를 반대로 설정
+			xSpeed = -xSpeed; // 튕겨나가도록 부호를 반대로 설정(핵심)
 		}
 		if (y > HEIGHT - 40 || y < 0) { // 아래 벽 || 위쪽 벽
 			ySpeed = -ySpeed;

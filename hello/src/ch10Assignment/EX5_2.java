@@ -19,12 +19,11 @@ public class EX5_2 extends JFrame implements ActionListener { // 조건과 같�
 
 		JPanel above = new JPanel(); // 텍스트 필드를 담을 panel
 		text = new JTextField(30);
-		text.setText("");
 		above.add(text);
 		add(above, BorderLayout.NORTH);
 
 		JPanel middle = new JPanel(); // C 버튼을 담을 panel
-		middle.setLayout(new BorderLayout());
+		middle.setLayout(new BorderLayout()); // C 버튼을 왼쪽으로 하기 위한 설정
 		clear = new JButton("C       ");
 		clear.addActionListener(this);
 		middle.add(clear);
@@ -104,11 +103,11 @@ public class EX5_2 extends JFrame implements ActionListener { // 조건과 같�
 		} else if (e.getSource() == buttons[13]) { // +/- 버튼은 사용 않음
 		} else if (e.getSource() == buttons[14]) { // = 버튼을 눌렀을 때의 경우
 			if (func.equals("/")) { // 연산자에 따라 결과값이 바뀜
-				result = temp * 1.0 / oldNum;
+				result = temp * 1.0 / oldNum; // double값으로 결과를 보이기 위해 1.0을 곱함, temp는 첫 번째 숫자, oldNum은 두 번째로 선택된 숫자!
 				text.setText(temp + func + oldNum + "=" + result);
 			} else if (func.equals("*")) {
 				result = temp * oldNum;
-				text.setText(temp + func + oldNum + "=" + (int) result);
+				text.setText(temp + func + oldNum + "=" + (int) result); // 나머지 연산자들은 값이 다 int이므로 double로 설정했던 result만 int로 형변환
 			} else if (func.equals("-")) {
 				result = temp - oldNum;
 				text.setText(temp + func + oldNum + "=" + (int) result);

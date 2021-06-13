@@ -23,7 +23,7 @@ public class VenomTest extends JFrame {
 		panel.requestFocus();
 		panel.setFocusable(true); // 헷갈렸음
 
-		panel.addKeyListener(new KeyListener() {
+		panel.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 				int keycode = e.getKeyCode();
 				switch (keycode) {
@@ -42,10 +42,6 @@ public class VenomTest extends JFrame {
 				}
 				button.setLocation(venom_x, venom_y); // 교수님이 빈칸 문제 예시로 이 문장을 들었다!!
 			}
-
-			public void keyTyped(KeyEvent e) {} // keyPressed만 쓰더라도 이것들은 모두 인터페이스이기 때문에 내용이 없어도 써야함!! 교수님 언급
-			public void keyReleased(KeyEvent e) {}
-
 		});
 		add(panel);
 		setVisible(true);

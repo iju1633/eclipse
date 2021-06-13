@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 public class ByteStreamsLab {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException { // throws IOException 없으니까 InputStream, OutputStream 에러나네(Unhandled exception type FileNotFoundException)
 		Scanner sc = new Scanner(System.in);
 		System.out.print("원본 파일 이름을 입력하시오: ");
 		
